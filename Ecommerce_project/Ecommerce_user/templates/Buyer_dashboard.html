@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="view-port" content="width=device-width, initial-scale=1.0">
+        <title>BUYER DASHBOARD</title>
+    </head>
+    <body>
+        <div>
+        {% if user.is_authenticated %}
+        <h1>Hello, {{ user.username }}</h1>
+        <p>{{ userdetails.bio }}</p>
+        {% endif %}
+        </div>
+        <a href="{% url 'switch' %}">Switch to Seller</a>
+    </body>
+</html>

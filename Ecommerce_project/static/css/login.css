@@ -1,0 +1,100 @@
+*{
+    padding:0px;
+    margin:0px;
+    }
+    .nav-bar{
+        width:300px;
+        height:auto;
+        margin:auto;
+        border-radius:6px;
+        box-shadow:0px 4px 8px 0px rgba(0,0,0,0.2);
+    
+    }
+    .nav-bar form{
+        padding:46px;
+        font-family:arial;
+    }
+    .nav-bar form input[type=submit]{
+        background-color: black;
+        border-style: none;
+        width:100%;
+        height:auto;
+        color:white;
+        padding:14px 20px;
+        font-weight: bold;
+        border-radius:6px;
+    }
+    .nav-bar form input[type=text],input[type=password]{
+        background-color:black;
+        height:auto;
+        color:white;
+        padding:14px 20px;
+        border-style: none;
+        border-radius:6px;
+    }
+    .nav-bar form a{
+        text-decoration: none;
+        font-weight:bold;
+    }
+    .nav-bar form input:focus{
+        outline:none;
+    }
+    .container{
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+    .nav-bar form input[type=submit]:hover{
+        opacity:0.7;
+    }
+    .content{
+        color:black;
+        display:none;
+    }
+     .nav1{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .nav1 div img{
+      width:30px;
+      height:30px;
+    }
+    @media (min-width:768px){
+        .content{
+            display:block;
+            font-family:arial;
+            color:black;
+            margin:auto;
+            padding:5%;
+        }
+        .content .nav{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .content .nav div img{
+          width:30px;
+          height:30px;
+        }
+        .container{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .nav1{
+            display:none;
+        }
+    }
+    body .error .errors{
+        color:white;
+        background-color:red;
+        border-radius: 6px;
+    }
+    body .error{
+        padding:16px;
+    }
+    body .error .errors p{
+     font-weight: bold; 
+     padding:26px; 
+     font-family: arial;
+    }

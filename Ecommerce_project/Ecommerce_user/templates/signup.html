@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="view-port" content="width=device-width, initial-scale=1.0">
+        <title>REGISTER</title>
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    </head>
+    <body>
+        <div class="error">
+            {% if error %}
+            <div class="errors"> 
+             <p>{{error}}</p>  
+            </div>
+            {% endif %}
+            </div>
+        <div class="container">
+            <div class="content">
+                <h1>Create an account to start selling<br/> and buying great deals!</h1>
+                <p>Great deals with huge discounts, shop now and enjoy.</p>
+                <br/><br/>
+                <div class="nav">
+                    <div>
+                    <a href="#"><img src=" {% static 'images/fb.png' %}" alt="facebook logo"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/x.png' %}" alt="twitter/x logo"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/linkedin.png' %}" alt="linkedin logo"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-bar">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <h1>Create account</h1>
+                <br/>
+                <hr/>
+                <br/>
+                <label>First Name:</label>
+                <br/>
+                <br/>
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <br/>
+                <br/>
+                <label> Last Name:</label>
+                <br/>
+                <br/>
+                <input type="text" name="last_name" placeholder="Last Name">
+                <br/>
+                <br/>
+                <label>Username:</label>
+                <br/>
+                <br/>
+                <input type="text" name="username" placeholder="Username" required>
+                <br/>
+                <br/>
+                <label>Email:</label>
+                <br/>
+                <br/>
+                <input type="email" name="email" placeholder="Email" required>
+                <br/>
+                <br/>
+                <label>Set Password:</label>
+                <br/>
+                <br/>
+                <input type="password" name="password1" placeholder="Set Password" required>
+                <br/>
+                <br/>
+                <label>Comfirm Password:</label>
+                <br/>
+                <br/>
+                <input type="password" name="password2" placeholder="Comfirm Password" required>
+                <br/>
+                <br/>
+                
+                <input type="submit" value="Register">
+                <br/><br/>
+                <div class="nav1">
+                    <div>
+                    <a href="#"><img src="{% static 'images/fb.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/x.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/linkedin.png' %}"></a>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

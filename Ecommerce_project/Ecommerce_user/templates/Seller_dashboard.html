@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="view-port" content="width=device-width, initial-scale=1.0">
+        <title>SELLER DASHBOARD</title>
+    </head>
+    <body>
+        <div>
+        {% if user.is_authenticated %}
+        <h1>Hello, {{ user.username }}</h1>
+        <p>{{ userdetails.bio }}</p>
+        {% endif %}
+        </div>
+        {% for product in products %}
+        {% for image in product.images.all %}
+        <img style="width:100px; height:100px;" src="{{ image.image.url }}">
+        {% endfor %}
+        <p>{{ product.name }}</p>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        <p>{{ product.category }}</p>
+        <p>Views: {{ product.views }}</p>
+
+        {% endfor %}
+        <a href="{% url 'switch' %}">Switch to Buyer</a>
+    </body>
+</html>

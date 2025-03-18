@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="view-port" content="width=device-width, initial-scale=1.0">
+        <title>USER PROFILE</title>
+        <link rel="stylesheet" href="{% static 'css/userprofilechange.css' %}">
+    </head>
+    <body>
+        <div class="error">
+            {% if error %}
+            <div class="errors"> 
+             <p>{{error}}</p>  
+            </div>
+            {% endif %}
+            </div>
+        <div class="error"></div>
+        <div class="container">
+            <div class="content">
+                <h1>Tell the world about yourself!</h1>
+                <p><li> Upload your profile picture to let people know you are.</li></p>
+                <p><li> Provide your numbers both call and whatsapp to let your customers reach you easily.</li></p>
+                <br/><br/>
+                <div class="nav">
+                    <div>
+                    <a href="#"><img src="{% static 'images/fb.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/x.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/linkedin.png' %}"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-bar">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <h1>Edit Profile</h1>
+                <br/>
+                <hr/>
+                <br/>
+                <label>Profile Picture:</label>
+                <br/>
+                <br/>
+                {% if userpro.profile_picture %}
+                <div class="current_pic"><img src="{{ userpro.profile_picture.url }}" alt="Profile Picture"></div>
+                {% endif %}
+                <input type="file" name="image" accept="image/*">
+                <br/>
+                <br/>
+                <label>bio:</label>
+                <br/>
+                <br/>
+                <textarea name="bio" placeholder="Tell the world about yourself!"> {{ userpro.bio }} </textarea>
+                <br/>
+                <br/>
+                
+                <label>Phone:</label>
+                <br/>
+                <br/>
+                <input type="tel" name="phone" placeholder="Phone" value="{{ userpro.phone }}">
+                <br/>
+                <br/>
+                <label>Whatsapp Number:</label>
+                <br/>
+                <br/>
+                <input type="tel" name="whatsapp" placeholder="Whatsapp Number" value="{{ userpro.whatsapp_phone }}">
+                <br/>
+                <br/>
+                
+                <input type="submit" value="Save Profile">
+                <br/><br/>
+                <div class="nav1">
+                    <div>
+                    <a href="#"><img src="{% static 'images/fb.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/x.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/linkedin.png' %}"></a>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

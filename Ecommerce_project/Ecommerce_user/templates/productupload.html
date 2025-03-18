@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="view-port" content="width=device-width, initial-scale=1.0">
+        <title>ADD PRODUCTS</title>
+        <link rel="stylesheet" href="{% static 'css/productupload.css' %}">
+    </head>
+    <body>
+        <div class="error">
+            {% if error %}
+            <div class="errors"> 
+             <p>{{error}}</p>  
+            </div>
+            {% endif %}
+            </div>
+        <div class="error"></div>
+        <div class="container">
+            <div class="content">
+                <h1>Tell the world about yourself!</h1>
+                <p><li> Upload your profile picture to let people know you are.</li></p>
+                <p><li> Provide your numbers both call and whatsapp to let your customers reach you easily.</li></p>
+                <br/><br/>
+                <div class="nav">
+                    <div>
+                    <a href="#"><img src="{% static 'images/fb.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/x.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/linkedin.png' %}"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-bar">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <h1>Add Product</h1>
+                <br/>
+                <hr/>
+                <br/>
+                <label>Product Images:</label>
+                <br/>
+                <br/>
+                <input type="file" name="images" accept="image/*" multiple required>
+                <br/>
+                <br/>
+                <label>Product Name:</label>
+                <br/>
+                <br/>
+                <input type="text" name="name" placeholder="Product Name" required>
+                <br/>
+                <br/>
+                <label>Description:</label>
+                <br/>
+                <br/>
+                <textarea name="description" placeholder="Describe your product"></textarea>
+                <br/>
+                <br/>
+                <label>Product Category:</label>
+                <br/>
+                <br/>
+                <select name="category" style="  background-color:black;
+                height:auto;
+                color:white;
+                padding:14px 20px;
+                border-style: none;
+                border-radius:6px;
+                width: 100%;" required>
+                    <option>Fashion</option>
+                    <option>Phones & Tablets</option>
+                    <option>Home & Office</option>
+                    <option>Electronics</option>
+                    <option>Computing</option>
+                    <option>Health & Beauty</option>
+                    <option>Groceries</option>
+                    <option>Sports & Fitness</option>
+                    <option>Baby Products</option>
+                    <option>Automotive</option>
+                </select>
+                <br/>
+                <br/>
+                <label>Price:</label>
+                <br/>
+                <br/>
+                <input type="number" name="price" placeholder="Price" maxlength="10" required>
+                <br/>
+                <br/>
+                
+                <input type="submit" value="Add Product">
+                <br/><br/>
+                <div class="nav1">
+                    <div>
+                    <a href="#"><img src="{% static 'images/fb.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/x.png' %}"></a>
+                    </div>
+                    <div>
+                    <a href="#"><img src="{% static 'images/linkedin.png' %}"></a>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
