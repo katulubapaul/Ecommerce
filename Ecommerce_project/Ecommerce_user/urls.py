@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Login_View, Register_View, Logout_View,home, switch, userprofile, userprofilechange, products, Seller_View, dashboard, Buyer_view
+from .views import Login_View, Register_View, Logout_View,home, switch, userprofile, product_details, userprofilechange, products, Seller_View, dashboard, Buyer_view
 
 urlpatterns = [
     path('login/', Login_View, name="login"),
@@ -12,5 +12,6 @@ urlpatterns = [
     path('seller_dashboard/', Seller_View, name="seller_dashboard"),
     path('dashboard/', dashboard, name="dashboard"),
     path('buyer_dashboard/', Buyer_view, name="buyer_dashboard"),
-    path("switch_role_dashboard/", switch, name="switch")
+    path("switch_role_dashboard/", switch, name="switch"),
+    path("product/<int:id>/", product_details, name="product_details")
 ]
